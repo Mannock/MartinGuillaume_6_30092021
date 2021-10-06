@@ -150,3 +150,62 @@ main {
         "d e f";
     }
 }
+
+.photographer-infos{
+    position: relative;
+    padding-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 45px;
+    .tag{
+        & ul{
+        justify-content:flex-start ;
+    }
+    & li:first-child{
+        margin-left: 0px;
+    }
+}
+    & p:nth-child(3) {
+        font-size: 13px;
+        color: $grey;
+    }
+    .card{
+        margin:0px;
+        width: 100px;
+        height: 100px;
+        position:absolute;
+        right: 20px;
+        top: 15px;
+    }
+    .card__image{
+        right: -10px;
+        top: -10px;
+    }
+}
+
+.work-display{
+    .work-display__card{
+        margin: 0 auto;
+        width: 335px;
+        height: 190px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .work-display__card__image{
+        width: 335px;
+        height: 190px;
+        object-fit: cover;
+        object-position: 50% 10%;
+        // transform: scale(0.8);
+    }
+    .infos-card{
+        margin: 10px 0px 10px 20px;
+        & h2{
+            margin: 0;
+            font-size: 14px;
+            color: $secondary-color;
+            font-weight: 400;
+        }
+
+    }
+
+}
