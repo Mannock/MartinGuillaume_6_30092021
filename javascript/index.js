@@ -5,7 +5,7 @@ let photographers = [];
 
 export const photographerDisplay = async () => {
   const photographe = await fetchPhotographer();
-  //   console.log(photographe.photographers);
+  console.log(photographe.photographers);
   photographers = photographe.photographers.map((data) => {
     return new Photographer(
       data.name,
@@ -21,8 +21,6 @@ export const photographerDisplay = async () => {
   allTags();
   tagsListener();
 };
-
-photographerDisplay();
 
 const affichage = (data) => {
   document.querySelector(".artists").innerHTML = data
@@ -62,11 +60,11 @@ let filterArray = [];
 
 function tagsListener() {
   const tags = document.querySelectorAll(".tags");
-  console.log(tags);
+  // console.log(tags);
   tags.forEach((e) =>
     e.addEventListener("click", () => {
       e.classList.toggle("active");
-      console.log(e.classList.value);
+      // console.log(e.classList.value);
       // filterArray.push(e.classList[1]);
       // console.log(filterArray);
       if (
@@ -79,10 +77,38 @@ function tagsListener() {
         filterArray.splice(index, 1);
         //   filterArray = filterArray.filter((el) => el !== e.classlist[1]);
       }
-      console.log(filterArray);
+      // console.log(filterArray);
+      onlyTagged();
     })
   );
 }
+
+const onlyTagged = () => {
+  console.log(filterArray);
+  const newArray = photographers.filter((p) => p.hasTags(filterArray));
+  console.log(newArray);
+  affichage(newArray);
+};
+
+// const onlyTagged = () => {
+//   let taggedArtist = [];
+//     console.log(filterArray);
+//   const newArray = photographers.filter((p) => {
+//     // function findCommonTags(tag.tags, filterArray) {
+//     //   return tag.tags.some(item => filterArray.includes(item) )
+//     // }
+//     if (tag.tags.includes("sport")) {
+//       console.log("true");
+//       taggedArtist.push(tag);
+//     } else {
+//       console.log("false");
+//     }
+//   });
+//   console.log(taggedArtist);
+// };
+
+photographerDisplay();
+
 // let sortingArray = document.querySelectorAll("ul li");
 // console.log(sortingArray);
 

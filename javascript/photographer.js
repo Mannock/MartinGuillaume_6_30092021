@@ -9,7 +9,10 @@ export class Photographer {
   }
 
   // filtrer les photographes aves les tags correspondants.
-  hasTags = (tags) => {
+  hasTags = (liste) => {
+    // condition pour répondre oui ou non
+    // this.tags / liste 
+    
     return true;
   };
 
