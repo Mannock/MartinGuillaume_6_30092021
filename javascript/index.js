@@ -84,10 +84,14 @@ function tagsListener() {
 }
 
 const onlyTagged = () => {
-  console.log(filterArray);
+  // console.log(filterArray);
   const newArray = photographers.filter((p) => p.hasTags(filterArray));
   console.log(newArray);
-  affichage(newArray);
+  if (newArray == 0) {
+    affichage(photographers);
+  } else {
+    affichage(newArray);
+  }
 };
 
 // const onlyTagged = () => {

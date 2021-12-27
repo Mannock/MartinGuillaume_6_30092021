@@ -9,11 +9,21 @@ export class Photographer {
   }
 
   // filtrer les photographes aves les tags correspondants.
-  hasTags = (liste) => {
+  hasTags = (tags) => {
     // condition pour répondre oui ou non
-    // this.tags / liste 
-    
-    return true;
+
+    let ok = false;
+
+    // console.log(tags);
+    // console.log(this.tags);
+    this.tags.forEach((tag) => {
+      // console.log(tag);
+      if (tags.includes(tag)) {
+        ok = true;
+      }
+    });
+    // console.log("TEST");
+    return ok;
   };
 
   render = function () {
