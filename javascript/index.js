@@ -5,7 +5,6 @@ let photographers = [];
 
 export const photographerDisplay = async () => {
   const photographe = await fetchPhotographer();
-  console.log(photographe.photographers);
   photographers = photographe.photographers.map((data) => {
     return new Photographer(
       data.name,
@@ -16,7 +15,6 @@ export const photographerDisplay = async () => {
       data.tags
     );
   });
-  console.log(photographers);
   affichage(photographers);
   allTags();
   tagsListener();
@@ -48,25 +46,15 @@ const allTags = () => {
       return renderTags(tag);
     })
     .join("");
-
-  // console.log(uniqueTags);
-  // uniqueTags.forEach((tag) => {
-  //   console.log(tag);
-  //   // tag.classlist.add("test");
-  // });
 };
 
 let filterArray = [];
 
 function tagsListener() {
   const tags = document.querySelectorAll(".tags");
-  // console.log(tags);
   tags.forEach((e) =>
     e.addEventListener("click", () => {
       e.classList.toggle("active");
-      // console.log(e.classList.value);
-      // filterArray.push(e.classList[1]);
-      // console.log(filterArray);
       if (
         e.classList.contains("active") &&
         !filterArray.includes(e.classList[1])
@@ -75,18 +63,15 @@ function tagsListener() {
       } else {
         const index = filterArray.findIndex((x) => x === e.classList[1]);
         filterArray.splice(index, 1);
-        //   filterArray = filterArray.filter((el) => el !== e.classlist[1]);
       }
-      // console.log(filterArray);
       onlyTagged();
     })
   );
 }
 
 const onlyTagged = () => {
-  // console.log(filterArray);
   const newArray = photographers.filter((p) => p.hasTags(filterArray));
-  console.log(newArray);
+  // console.log(newArray);
   if (newArray == 0) {
     affichage(photographers);
   } else {
@@ -94,33 +79,4 @@ const onlyTagged = () => {
   }
 };
 
-// const onlyTagged = () => {
-//   let taggedArtist = [];
-//     console.log(filterArray);
-//   const newArray = photographers.filter((p) => {
-//     // function findCommonTags(tag.tags, filterArray) {
-//     //   return tag.tags.some(item => filterArray.includes(item) )
-//     // }
-//     if (tag.tags.includes("sport")) {
-//       console.log("true");
-//       taggedArtist.push(tag);
-//     } else {
-//       console.log("false");
-//     }
-//   });
-//   console.log(taggedArtist);
-// };
-
 photographerDisplay();
-
-// let sortingArray = document.querySelectorAll("ul li");
-// console.log(sortingArray);
-
-//ajouter une class aux tags
-// tag.addEventListener("click", () => {
-//   console.log("click");
-// });
-
-//créer les event listeners
-
-//trier en fonction de la sélection

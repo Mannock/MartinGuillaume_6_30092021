@@ -6,7 +6,6 @@ let photographers = [];
 //charger et afficher
 export const photographerDisplay = async () => {
   const photographe = await fetchPhotographer();
-  // console.log(photographe.photographers);
   photographers = photographe.photographers.map((data) => {
     return new Photographer(
       data.name,
@@ -48,5 +47,3 @@ export const photographerDisplay = async () => {
     })
     .join("");
 };
-
-// console.log(photographers);

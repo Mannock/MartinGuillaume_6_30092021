@@ -23,7 +23,7 @@ const fetchMedias = async () => {
   console.log(medias);
 };
 
-fetchMedias();
+// fetchMedias();
 
 const mediaDisplay = async () => {
   await fetchMedias();
