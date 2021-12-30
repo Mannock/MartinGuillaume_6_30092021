@@ -1,4 +1,4 @@
-import { Photographer } from "./photographer.js";
+import { Photographer } from "./objects/photographer.js";
 import { fetchPhotographer } from "./data.js";
 
 let photographers = [];

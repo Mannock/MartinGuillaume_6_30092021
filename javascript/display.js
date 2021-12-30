@@ -1,5 +1,5 @@
 import { fetchPhotographer } from "./data.js";
-import { Photographer } from "./photographer.js";
+import { Photographer } from "./objects/photographer.js";
 
 let photographers = [];
 
@@ -39,7 +39,7 @@ export const photographerDisplay = async () => {
       .join("");
   };
 
-  allTags();
+  // allTags();
 
   document.querySelector(".artists").innerHTML = photographers
     .map((photographer) => {
