@@ -12,7 +12,8 @@ export const photographerDisplay = async () => {
       data.country,
       data.tagline,
       data.price,
-      data.tags
+      data.tags,
+      data.id
     );
   });
   affichage(photographers);

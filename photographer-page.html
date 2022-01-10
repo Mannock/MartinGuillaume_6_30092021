@@ -21,17 +21,18 @@
       <div class="photographer-infos">
         <div class="card">
           <img
+            id="profilePic"
             class="card__image"
             src="./img/Sample Photos/Photographers ID Photos/MimiKeel.jpg"
             alt=""
           />
         </div>
-        <h1>Mimi Keel</h1>
+        <h1 id="name"></h1>
         <button class="open-modal button">Contactez-moi</button>
         <div class="modal hidden">
           <button class="close-modal">&times;</button>
           <h1>Contactez-moi</h1>
-          <h1>Mimi Keel</h1>
+          <h1 id="nameModal"></h1>
           <form action="">
             <div class="firstname-container">
               <label for="firstname">Prénom</label><br />
@@ -82,9 +83,9 @@
           </form>
         </div>
 
-        <p>London, UK</p>
-        <p>Voir le beau dans le quotidien</p>
-        <div class="tag">
+        <p id="location"></p>
+        <p id="tagline"></p>
+        <div class="tag" id="tags">
           <ul>
             <li>#portrait</li>
             <li>#events</li>
@@ -97,6 +98,9 @@
       <div class="work-display"></div>
     </main>
     <div class="overlay hidden"></div>
-    <script src="./javascript/photographe.js"></script>
+    <script type="module" src="./javascript/photographer-page.js"></script>
+    <script type="module" src="./javascript/objects/photographer.js"></script>
+    <script type="module" src="./javascript/modal.js"></script>
+    <script type="module" src="./javascript/objects/photographer.js"></script>
   </body>
 </html>
