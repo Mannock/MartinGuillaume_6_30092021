@@ -63,9 +63,11 @@ export class Photographer {
     ).innerHTML = `<p>${this.city}, ${this.country}<p>`;
     document.getElementById("tagline").innerHTML = this.tagline;
     document.getElementById("tags").innerHTML = `<ul>${ownTags}</ul>`;
-    // document.getElementById("profilePic").src=./img/Sample Photos/Photographers ID Photos/${this.name
-    //   .split(" ")
-    //   .join("")}.jpg" alt="photo de ${this.name};
+    document.getElementById("profilePic").innerHTML = ` <img
+    class="card__image"
+    src="./img/Sample Photos/Photographers ID Photos/${this.name
+      .split(" ")
+      .join("")}.jpg" alt="photo de ${this.name}">`;
     // document.getElementById("form-title-name").innerHTML = this.name;
     // document.getElementById("scrollPrice").innerHTML = `${this.price}€/jour`;
     // this.displayTags();
