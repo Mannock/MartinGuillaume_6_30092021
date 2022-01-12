@@ -68,9 +68,7 @@ export class Photographer {
     src="./img/Sample Photos/Photographers ID Photos/${this.name
       .split(" ")
       .join("")}.jpg" alt="photo de ${this.name}">`;
-    // document.getElementById("form-title-name").innerHTML = this.name;
-    // document.getElementById("scrollPrice").innerHTML = `${this.price}€/jour`;
-    // this.displayTags();
+    document.getElementById("nameModal").innerHTML = this.name;
   }
 
   // displayProfile() {

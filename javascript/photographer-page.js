@@ -1,20 +1,5 @@
-// const fetchPhotographer = async () => {
-//   const res = await fetch("data.json");
-//   return res.json();
-// };
-
 import { Photographer } from "./objects/photographer.js";
-
-// import { photographerDisplay } from ".";
-
-// fetchPhotographer();
 const photographerID = new URLSearchParams(window.location.search).get("id");
-console.log(photographerID);
-
-// function query(key) {
-//   const params = new URLSearchParams(window.location.search);
-//   return params.get(key);
-// }
 
 fetch("data.json")
   .then(function (res) {
@@ -33,19 +18,13 @@ fetch("data.json")
       profil.tags,
       profil.id
     );
-    console.log(photographer);
+    // let photographer = new Photographer(profil); ASK
+    let medias = json.media.filter(
+      (media) => media.photographerId == photographerID
+    );
+    console.log(medias);
     photographer.displayProfile();
   });
-
-// .then(function (json) {
-//   let list = new MediaList();
-//   let factory = new MediaFactory();
-//   let medias = getMedias(json.media);
-//   let profil = json.photographers.filter(
-//     (photographe) => photographe.id == query("id")
-//   )[0];
-//   let photographer = new Photographer(profil);
-// let medias = [];
 
 // import { photographerDisplay } from ".";
 
@@ -57,9 +36,6 @@ fetch("data.json")
 // };
 
 // fetchMedias();
-
-// let query = location.search;
-// console.log(query);
 
 // const mediaDisplay = async () => {
 //   await fetchMedias();
