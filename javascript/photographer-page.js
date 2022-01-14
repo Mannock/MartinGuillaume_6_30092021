@@ -1,4 +1,5 @@
 import { Photographer } from "./objects/photographer.js";
+import { Media } from "./objects/medias.js";
 const photographerID = new URLSearchParams(window.location.search).get("id");
 
 fetch("data.json")
@@ -23,7 +24,22 @@ fetch("data.json")
       (media) => media.photographerId == photographerID
     );
     console.log(medias);
+    let pictures = medias.map((element) => {
+      return new Media(
+        element.id,
+        element.photographerId,
+        element.image,
+        element.tags,
+        element.likes,
+        element.date,
+        element.price,
+        element.title
+      );
+    });
+    console.log(pictures);
     photographer.displayProfile();
+
+    // medias.display(medias);
   });
 
 // import { photographerDisplay } from ".";
