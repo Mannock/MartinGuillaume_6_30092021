@@ -1,5 +1,7 @@
 import { Photographer } from "./objects/photographer.js";
-import { Media } from "./objects/medias.js";
+import { Image } from "./objects/image.js";
+import { MediaFactory } from "./objects/mediaFactory.js";
+import { AllMedias } from "./objects/allMedia.js";
 const photographerID = new URLSearchParams(window.location.search).get("id");
 
 fetch("data.json")
@@ -20,26 +22,37 @@ fetch("data.json")
       profil.id
     );
     // let photographer = new Photographer(profil); ASK
+
     let medias = json.media.filter(
       (media) => media.photographerId == photographerID
     );
     console.log(medias);
-    let pictures = medias.map((element) => {
-      return new Media(
-        element.id,
-        element.photographerId,
-        element.image,
-        element.tags,
-        element.likes,
-        element.date,
-        element.price,
-        element.title
-      );
+    let factory = new MediaFactory();
+    let allMedias = new AllMedias();
+
+    medias.forEach((element) => {
+      let media = factory.create(element);
+      // console.log(media);
+      allMedias.add(media);
+      console.log(allMedias.all);
     });
-    console.log(pictures);
+    allMedias.display(allMedias.all);
+
+    // let media = medias.forEach((element) => {
+    //   factory.create(element);
+    // });
+    // console.log(media);
+
+    // console.log(pictures);
+    // console.log(pictures[0].hasOwnProperty("image"));
     photographer.displayProfile();
 
     // medias.display(medias);
+    // document.querySelector(".work-display").innerHTML = pictures
+    //   .map((picture) => {
+    //     return picture.render();
+    //   })
+    //   .join("");
   });
 
 // import { photographerDisplay } from ".";

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photographer</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
 
   <body>
@@ -89,12 +89,70 @@
         </div>
       </div>
 
+      <!--TRI-->
+      <div class="sort">
+        <span id="sort-text">Triez-par</span>
+        <button
+          tabindex="1"
+          id="sort-list_closed"
+          class="popularity-btn sort-list_closed"
+        >
+          <span id="selected-filter" class="category category-closed">
+            <span id="text-choice">
+              <span id="text-choice-change">Popularité</span>
+              <span><i class="fas fa-chevron-down"></i></span>
+            </span>
+          </span>
+        </button>
+        <nav
+          id="sort-list"
+          class="sort-by popularity-btn popularity-btn-opened"
+        >
+          <ul>
+            <li>
+              <button
+                tabindex="1"
+                id="popularity-btn"
+                class="sort-by_popu"
+                data-order="popularity"
+              >
+                Popularité
+                <span><i class="fas fa-chevron-up"></i></span>
+              </button>
+            </li>
+            <li>
+              <button
+                tabindex="1"
+                id="date-btn"
+                class="sort-by sort-by_date"
+                data-order="date"
+              >
+                Date
+              </button>
+            </li>
+
+            <li>
+              <button
+                tabindex="1"
+                id="title-btn"
+                class="sort-by sort-by_title"
+                data-order="title"
+              >
+                Titre
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <div class="work-display"></div>
     </main>
     <div class="overlay hidden"></div>
     <script type="module" src="./javascript/photographer-page.js"></script>
     <script type="module" src="./javascript/objects/photographer.js"></script>
-    <script type ="module" src="./javascript/objects/medias.js"></script>
+    <script type="module" src="./javascript/objects/image.js"></script>
+    <script type="module" src="./javascript/modal.js"></script>
+    <script type="module" src="./javascript/objects/video.js"></script>
     <script type="module" src="./javascript/modal.js"></script>
     <script type="module" src="./javascript/objects/photographer.js"></script>
   </body>
