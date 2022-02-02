@@ -16,15 +16,15 @@ export class Video {
     <img
       class="work-display__card__image"
       src="./img/Sample Photos/${this.photographerId}/${this.src}"
-      type ="video/mp4"
+      type ="video.mp4"
       alt=""
     />
     <div class="infos-card">
       <h2>${this.title}</h2>
       <div class="counter">
-        <p>${this.likes}</p>
-        <img src="./img/heart-icon.png" alt="heart icon" />
-      </div>
+        <p class = "medialikes" data-id="${this.id}">${this.likes}</p>
+        <img src="./img/heart-icon.png" class= "hearticon" data-id="${this.id}" alt="heart icon" />
+        </div>
     </div>
     </div>
 

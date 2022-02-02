@@ -35,8 +35,12 @@ fetch("data.json")
       // console.log(media);
       allMedias.add(media);
       console.log(allMedias.all);
+      console.log(media.likes);
     });
     allMedias.display(allMedias.all);
+    allMedias.addMediaLikes();
+    allMedias.getAllLikesPhotographer();
+    photographer.displayProfile();
 
     // let media = medias.forEach((element) => {
     //   factory.create(element);
@@ -45,7 +49,6 @@ fetch("data.json")
 
     // console.log(pictures);
     // console.log(pictures[0].hasOwnProperty("image"));
-    photographer.displayProfile();
 
     // medias.display(medias);
     // document.querySelector(".work-display").innerHTML = pictures

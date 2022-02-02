@@ -69,6 +69,7 @@ export class Photographer {
       .split(" ")
       .join("")}.jpg" alt="photo de ${this.name}">`;
     document.getElementById("nameModal").innerHTML = this.name;
+    document.getElementById("scrollPrice").innerHTML = `${this.price}€/jour`;
   }
 
   // displayProfile() {

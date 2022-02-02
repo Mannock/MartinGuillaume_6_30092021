@@ -21,8 +21,8 @@ export class Image {
              <div class="infos-card">
                <h2>${this.title}</h2>
                <div class="counter">
-                 <p>${this.likes}</p>
-                 <img src="./img/heart-icon.png" alt="heart icon" />
+                 <p class = "medialikes" data-id="${this.id}">${this.likes}</p>
+                 <img src="./img/heart-icon.png" class= "hearticon" data-id="${this.id}" alt="heart icon" />
                </div>
              </div>
              </div>
