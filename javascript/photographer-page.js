@@ -34,12 +34,17 @@ fetch("data.json")
       let media = factory.create(element);
       // console.log(media);
       allMedias.add(media);
-      console.log(allMedias.all);
-      console.log(media.likes);
+      // console.log(allMedias.all);
+      // console.log(media.likes);
     });
+    console.log(allMedias.all);
+    allMedias.sortingPopularity();
+    allMedias.sortingDate();
+    allMedias.sortingName();
     allMedias.display(allMedias.all);
     allMedias.addMediaLikes();
-    allMedias.getAllLikesPhotographer();
+    allMedias.getAllLikes();
+
     photographer.displayProfile();
 
     // let media = medias.forEach((element) => {

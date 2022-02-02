@@ -13,10 +13,10 @@ export class Video {
   render = function () {
     return `
     <div class="work-display__card">
-    <img
+    <video
       class="work-display__card__image"
       src="./img/Sample Photos/${this.photographerId}/${this.src}"
-      type ="video.mp4"
+      type ="video/mp4"
       alt=""
     />
     <div class="infos-card">
