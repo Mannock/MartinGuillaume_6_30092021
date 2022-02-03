@@ -4,6 +4,7 @@ $main-font: "DM Sans", sans-serif;
 $primary-color: #901c1c;
 $secondary-color: #d3573c;
 $grey: #525252;
+$background: #fafafa;
 
 * {
   box-sizing: border-box;
@@ -37,6 +38,9 @@ header {
     font-weight: 400;
     color: $primary-color;
     margin: 0;
+  }
+  &.photographer-page {
+    justify-content: flex-start;
   }
   @media screen and (max-width: 1050px) {
     display: flex;
@@ -298,9 +302,9 @@ main {
   color: black;
   z-index: 100;
   font-size: 1.5rem;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   position: fixed;
-  bottom: 8%;
+  bottom: 0%;
   right: 3%;
   background-color: $secondary-color;
   border-radius: 5px;
@@ -427,6 +431,15 @@ main {
     object-position: 50% 10%;
     // transform: scale(0.8);
   }
+  .work-display__card__video {
+    border-radius: 5px;
+    width: 335px;
+    height: 190px;
+    object-fit: cover;
+    object-position: 50% 10%;
+    // transform: scale(0.8);
+  }
+
   .infos-card {
     display: flex;
     flex-direction: row;
