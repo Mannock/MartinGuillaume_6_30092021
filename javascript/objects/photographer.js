@@ -57,13 +57,14 @@ export class Photographer {
       ownTags += `<li class= "${tag}">#${tag}</li>`;
     }
 
-    document.getElementById("name").innerHTML = `${this.name}`;
+    document.getElementById("nameProfil").innerHTML = `${this.name}`;
     document.getElementById(
-      "location"
+      "locationProfil"
     ).innerHTML = `<p>${this.city}, ${this.country}<p>`;
-    document.getElementById("tagline").innerHTML = this.tagline;
-    document.getElementById("tags").innerHTML = `<ul>${ownTags}</ul>`;
-    document.getElementById("profilePic").innerHTML = ` <img
+    document.getElementById("taglineProfil").innerHTML = this.tagline;
+    // document.getElementById("tags").innerHTML = `<ul>${ownTags}</ul>`;
+    document.getElementById("tagProfil").innerHTML = `<ul>${ownTags}</ul>`;
+    document.getElementById("photoProfil").innerHTML = ` <img
     class="card__image"
     src="./img/Sample Photos/Photographers ID Photos/${this.name
       .split(" ")

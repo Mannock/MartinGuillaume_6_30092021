@@ -32,7 +32,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin: 45px 40px;
+  padding: 45px 40px;
   h2 {
     font-size: 30px;
     font-weight: 400;
@@ -171,6 +171,27 @@ main {
       color: #911c1c;
     }
   }
+  .tagProfil {
+    text-align: start;
+    ul {
+      display: flex;
+      text-align: left;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 6px 0px;
+    }
+    li {
+      padding: 3px 6px;
+      margin: 3px;
+      font-size: 12px;
+      line-height: 16px;
+      border: 0.5px solid #c4c4c4;
+      box-sizing: border-box;
+      border-radius: 11px;
+      text-align: center;
+      color: #911c1c;
+    }
+  }
 
   .artists {
     @media screen and (min-width: 1050px) {
@@ -211,7 +232,7 @@ main {
 .modal {
   position: absolute;
   width: 100%;
-  top: 0%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   max-width: 500px;
@@ -266,44 +287,16 @@ main {
   display: none;
 }
 
-.photographer-infos {
-  position: relative;
-  padding-top: 30px;
-  padding-left: 20px;
-  margin-bottom: 45px;
-  .tag {
-    & ul {
-      justify-content: flex-start;
-    }
-    & li:first-child {
-      margin-left: 0px;
-    }
-  }
-  & p:nth-child(1) {
-    font-size: 13px;
-    color: $grey;
-  }
-  .card {
-    float: right;
-    margin: 0px;
-    // width: 100px;
-    // height: 100px;
-    right: 20px;
-  }
-  .card__image {
-    right: -10px;
-    top: -10px;
-  }
-}
-
 // SCROLL
 .scrollProfile {
   display: flex;
   color: black;
   z-index: 100;
+  width: 20rem;
   font-size: 1.5rem;
   padding: 0.5rem 1.5rem;
   position: fixed;
+  justify-content: space-evenly;
   bottom: 0%;
   right: 3%;
   background-color: $secondary-color;
@@ -329,6 +322,114 @@ main {
   color: black;
   font-weight: 600;
 }
+// .photographer-infos {
+//   position: relative;
+//   padding-top: 30px;
+//   padding-left: 20px;
+//   margin-bottom: 45px;
+//   .tag {
+//     & ul {
+//       justify-content: flex-start;
+//     }
+//     & li:first-child {
+//       margin-left: 0px;
+//     }
+//   }
+//   & p:nth-child(1) {
+//     font-size: 13px;
+//     color: $grey;
+//   }
+//   .card {
+//     float: right;
+//     margin: 0px;
+//     // width: 100px;
+//     // height: 100px;
+//     right: 20px;
+//   }
+//   .card__image {
+//     right: -10px;
+//     top: -10px;
+//   }
+// }
+
+// test
+#mainFiche {
+  margin-bottom: 5rem;
+}
+.profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0rem 5rem 3rem 5rem;
+  background-color: rgba(243, 244, 246, 0.5);
+  padding: 2rem;
+  border-radius: 5px;
+}
+.open-modal {
+  height: 4rem;
+  border: none;
+  margin-top: 1.8rem;
+  margin-right: 10rem;
+  padding: 1.5rem 1rem;
+  line-height: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background-color: #901c1c;
+  border-radius: 5px;
+}
+.contactButton:hover,
+.contactButton:focus {
+  background-color: #db8876;
+  color: black;
+}
+.textProfil {
+  display: flex;
+  flex-direction: column;
+}
+
+#photoProfil {
+  margin: 1rem 0 0 -2.2rem;
+}
+#photoProfil img {
+  width: 14rem;
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 14rem;
+}
+
+#nameProfil {
+  font-size: 4rem;
+  color: $secondary-color;
+  margin: 1rem 0;
+}
+#locationProfil p {
+  color: $primary-color;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+#taglineProfil {
+  font-size: 1rem;
+}
+#headerFiche {
+  margin-left: 5rem;
+}
+// .tag-photographe {
+//   margin: 0 0.2rem;
+//   color: $primary-color;
+//   font-size: 1rem;
+//   border: 0.5px solid #c4c4c4;
+//   border-radius: 11px;
+// }
+// .tag-photographe:hover,
+// .tag-photographe:focus {
+//   background-color: #db8876;
+//   color: white;
+// }
+// test
 
 // TRI
 // .sort {

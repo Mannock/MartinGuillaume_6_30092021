@@ -18,73 +18,91 @@
     </header>
 
     <main>
-      <div class="photographer-infos">
-        <div class="card" id="profilePic">
-          <img
+      <!-- test -->
+
+      <div id="mainFiche">
+        <section class="profil">
+          <div class="textProfil">
+            <h1 id="nameProfil"></h1>
+            <span id="locationProfil"></span>
+            <p id="taglineProfil"></p>
+            <div class="tagProfil" id="tagProfil"></div>
+          </div>
+          <button tabindex="0" class="open-modal" id="open-modal">
+            Contactez-moi
+          </button>
+          <div id="photoProfil"></div>
+        </section>
+      </div>
+
+      <!-- test -->
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1>Contactez-moi</h1>
+        <h1 id="nameModal"></h1>
+        <form action="">
+          <div class="firstname-container">
+            <label for="firstname">Prénom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="firstname"
+              name="first"
+              autocomplete="off"
+              minlength="2"
+            /><br />
+            <span></span>
+          </div>
+          <div class="lastname-container">
+            <label for="lastname">Nom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="lastname"
+              name="last"
+              autocomplete="off"
+            /><br />
+            <span></span>
+          </div>
+          <div class="email-container">
+            <label for="email">E-mail</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="email"
+              name="email"
+              autocomplete="off"
+            /><br />
+            <span></span>
+          </div>
+          <div class="message-container">
+            <label for="message">Votre message</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="message"
+              name="last"
+              autocomplete="off"
+            /><br />
+            <span></span>
+          </div>
+          <input class="btn-submit button2" type="submit" value="Envoyer" />
+        </form>
+      </div>
+      <!-- <div class="photographer-infos"> -->
+      <!-- <div class="card" id="profilePic"> -->
+      <!-- <img
             class="card__image"
             src="./img/Sample Photos/Photographers ID Photos/MimiKeel.jpg"
             alt=""
-          />
-        </div>
-        <h1 id="name"></h1>
-        <button class="open-modal button">Contactez-moi</button>
-        <div class="modal hidden">
-          <button class="close-modal">&times;</button>
-          <h1>Contactez-moi</h1>
-          <h1 id="nameModal"></h1>
-          <form action="">
-            <div class="firstname-container">
-              <label for="firstname">Prénom</label><br />
-              <input
-                class="text-control"
-                type="text"
-                id="firstname"
-                name="first"
-                autocomplete="off"
-                minlength="2"
-              /><br />
-              <span></span>
-            </div>
-            <div class="lastname-container">
-              <label for="lastname">Nom</label><br />
-              <input
-                class="text-control"
-                type="text"
-                id="lastname"
-                name="last"
-                autocomplete="off"
-              /><br />
-              <span></span>
-            </div>
-            <div class="email-container">
-              <label for="email">E-mail</label><br />
-              <input
-                class="text-control"
-                type="text"
-                id="email"
-                name="email"
-                autocomplete="off"
-              /><br />
-              <span></span>
-            </div>
-            <div class="message-container">
-              <label for="message">Votre message</label><br />
-              <input
-                class="text-control"
-                type="text"
-                id="message"
-                name="last"
-                autocomplete="off"
-              /><br />
-              <span></span>
-            </div>
-            <input class="btn-submit button2" type="submit" value="Envoyer" />
-          </form>
-        </div>
+          /> -->
+      <!-- </div> -->
+      <!-- <h1 id="name"></h1> -->
+      <!-- <button class="open-modal button">Contactez-moi</button> -->
 
-        <p id="location"></p>
-        <p id="tagline"></p>
-        <div class="tag" id="tags">
+      <!-- <p id="location"></p> -->
+      <!-- <p id="tagline"></p> -->
+      <div class="tag" id="tags">
           <ul></ul>
         </div>
       </div>
