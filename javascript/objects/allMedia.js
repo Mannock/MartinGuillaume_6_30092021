@@ -6,6 +6,7 @@ export class AllMedias {
     this.order = "";
     this.totallikes = 0;
   }
+
   add(media) {
     this.all.push(media);
   }
@@ -21,9 +22,8 @@ export class AllMedias {
   // DRY
 
   sortingPopularity() {
-    let popularity = document.getElementsByClassName("popularity-order");
-    popularity[0].addEventListener("click", (e) => {
-      console.log("hhello");
+    let popularity = document.getElementById("popularity-order");
+    popularity.addEventListener("click", (e) => {
       this.all = this.all.sort((a, b) => {
         return b.likes - a.likes;
       });
@@ -32,8 +32,8 @@ export class AllMedias {
   }
 
   sortingDate() {
-    let date = document.getElementsByClassName("date-order");
-    date[0].addEventListener("click", (e) => {
+    let date = document.getElementById("date-order");
+    date.addEventListener("click", (e) => {
       this.all = this.all.sort((a, b) => {
         let date1 = new Date(a.date);
         let date2 = new Date(b.date);
@@ -46,8 +46,8 @@ export class AllMedias {
   }
 
   sortingName() {
-    let name = document.getElementsByClassName("name-order");
-    name[0].addEventListener("click", (e) => {
+    let name = document.getElementById("name-order");
+    name.addEventListener("click", (e) => {
       this.all = this.all.sort((a, b) => {
         return a.title > b.title ? 1 : -1;
       });
