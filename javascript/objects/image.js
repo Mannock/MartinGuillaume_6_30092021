@@ -30,6 +30,11 @@ export class Image {
      `;
   };
 
+  renderLightbox = function () {
+    return `
+    `;
+  };
+
   //   display(medias) {
   //     medias.forEach(media => {
   //       document.querySelector(".work-display").innerHTML = medias

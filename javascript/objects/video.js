@@ -30,4 +30,9 @@ export class Video {
 
 `;
   };
+
+  renderLightbox = function () {
+    return `
+    `;
+  };
 }

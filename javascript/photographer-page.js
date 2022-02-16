@@ -1,8 +1,11 @@
+// import { dropdownFunction } from "./dropdown.js";
 import { Photographer } from "./objects/photographer.js";
+import { Lightbox } from "./objects/lightbox.js";
 import { Image } from "./objects/image.js";
 import { MediaFactory } from "./objects/mediaFactory.js";
 import { AllMedias } from "./objects/allMedia.js";
 const photographerID = new URLSearchParams(window.location.search).get("id");
+// dropdownFunction();
 
 fetch("data.json")
   .then(function (res) {
@@ -38,30 +41,42 @@ fetch("data.json")
       // console.log(media.likes);
     });
     console.log(allMedias.all);
+
+    let lightbox = new Lightbox(allMedias.all);
+    console.log(lightbox.medias);
+    console.log(lightbox);
+
     allMedias.sortingPopularity();
     allMedias.sortingDate();
     allMedias.sortingName();
     allMedias.display(allMedias.all);
+
     allMedias.addMediaLikes();
     allMedias.getAllLikes();
-
     photographer.displayProfile();
 
-    // let media = medias.forEach((element) => {
-    //   factory.create(element);
+    let x = document.querySelectorAll(".work-display__card__image");
+    x.forEach((media, index) => {
+      media.addEventListener("click", (e) => {
+        console.log(index);
+        console.log(media);
+        lightbox.handleIndex(index);
+      });
+    });
+
+    console.log(x);
+    // let lightboxClose = document.getElementById("lightbox__close");
+    // lightboxClose.addEventListener("click", (e) => {
+    //   document.getElementsByClassName("lightbox")[0].style.display = "none";
     // });
-    // console.log(media);
-
-    // console.log(pictures);
-    // console.log(pictures[0].hasOwnProperty("image"));
-
-    // medias.display(medias);
-    // document.querySelector(".work-display").innerHTML = pictures
-    //   .map((picture) => {
-    //     return picture.render();
-    //   })
-    //   .join("");
   });
+
+// const dropdown = document.getElementById("dropbtn");
+// console.log(dropdown);
+// dropdown.addEventListener("click", () => {
+//   console.log("hellow");
+//   document.getElementById("myDropdown").classList.toggle("show");
+// });
 
 // import { photographerDisplay } from ".";
 

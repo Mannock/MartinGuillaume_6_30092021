@@ -1,22 +1,43 @@
 export class Lightbox {
   constructor(allMedias) {
     this.medias = allMedias;
+    this.index = 0;
+    console.log(allMedias);
+  }
+
+  handleIndex(index) {
+    this.index = index;
+    this.display();
   }
 
   display() {
-    console.log("test");
-    document.getElementsByClassName("lightbox")[0].style.display = "block";
+    const box = document.getElementById("lightbox-container");
+    const media = this.medias[this.index];
+    console.log(media);
+    box.innerHTML = media.render();
   }
 
-  previous() {}
+  next() {
+    this.index++;
+    if (this.index == this.medias.length) {
+      this.index = 0;
+    }
+    this.display();
+  }
 
-  next() {}
+  previous() {
+    this.index--;
+    if (this.index < 0) {
+      this.index = this.medias.length - 1;
+    }
+    this.display();
+  }
+
+  close() {
+    let lightboxClose = document.getElementById("lightbox__close");
+    console.log(lightboxClose);
+    lightboxClose.addEventListener("click", (e) => {
+      document.getElementsByClassName("lightbox")[0].style.display = "none";
+    });
+  }
 }
-//   <div class="lightbox">
-//     <button class="lightbox__close"><img src="/Code/img/cross.png"></button>
-//     <button class="lightbox__next"><img src="/Code/img/arrowright.png"></button>
-//     <button class="lightbox__prev"><img src="/Code/img/arrowleft.png"></button>
-//     <div class="lightbox__container">
-//       <img src="https://picsum.photos/900/1800" alt="">
-//     </div>
-//   </div>

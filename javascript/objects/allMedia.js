@@ -23,7 +23,9 @@ export class AllMedias {
 
   sortingPopularity() {
     let popularity = document.getElementById("popularity-order");
+    console.log(popularity);
     popularity.addEventListener("click", (e) => {
+      console.log("test");
       this.all = this.all.sort((a, b) => {
         return b.likes - a.likes;
       });

@@ -17,6 +17,8 @@
       </div>
     </header>
 
+     
+
     <main>
       <!-- test -->
 
@@ -107,73 +109,80 @@
         </div>
       </div>
 
-      <!--TRI-->
-      <div class="sort">
-        <span id="sort-text">Triez-par</span>
-        <button
+      <!-- DROPDOWN MENU -->
+<!-- 
+      <div class="dropdown">
+        <div id ="sort-text">Triez par</div>
+        <button class="dropbtn">Popularité</button> -->
+        <!-- <span><img src="./img/vectordown.png" alt=""></span> -->
+        <!-- <div id="myDropdown" class="dropdown-content">
+          <button
           tabindex="1"
-          id="sort-list_closed"
-          class="popularity-btn sort-list_closed"
-        >
-          <span id="selected-filter" class="category category-closed">
-            <span id="text-choice">
-              <span id="text-choice-change">Popularité</span>
-              <span><i class="fas fa-chevron-down"></i></span>
-            </span>
-          </span>
-        </button>
-        <nav
-          id="sort-list"
-          class="sort-by popularity-btn popularity-btn-opened"
-        >
-          <ul>
-            <li>
-              <button
-                tabindex="1"
-                id="popularity-btn"
-                class="popularity-order button2"
-                data-order="popularity"
-              >
-                Popularité
-                <span><i class="fas fa-chevron-up"></i></span>
-              </button>
-            </li>
-            <li>
-              <button
-                tabindex="1"
-                id="date-btn"
-                class="date-order button2"
-                data-order="date"
-              >
-                Date
-              </button>
-            </li>
+          id="popularity-btn"
+          class="popularity-order button2"
+          data-order="popularity"
+          >
+          Popularité
+          </button>
+          <button
+          tabindex="1"
+          id="date-btn"
+          class="date-order button2"
+          data-order="date"
+          >
+          Date
+          </button>
+          <button
+          tabindex="1"
+          id="name-btn"
+          class="name-order button2"
+          data-order="title"
+          >
+          Titre
+          </button>
+        </div>
+      </div>  -->
 
-            <li>
-              <button
-                tabindex="1"
-                id="name-btn"
-                class="name-order button2"
-                data-order="title"
-              >
-                Titre
-              </button>
-            </li>
-          </ul>
-        </nav>
+      <!-- Select menu -->
+
+      <div class="select__menu">
+        <p>Triez par</p>
+        <select name="" id="selector">
+          <option value="popularity" id="popularity-order">Popularité</option>
+          <option value="date" id="date-order">Date</option>
+          <option value="name" id="name-order">Nom</option>
+        </select>
       </div>
+
+      <!-- select menu end  -->
+
+
+
+      <!-- Lightbox -->
+      <div class="box">
+        <button class="lightbox__close" id="lightbox__close"><img src="/Code/img/cross.png"></button>
+        <button class="lightbox__next"><img src="/Code/img/arrowright.png"></button>
+        <button class="lightbox__prev"><img src="/Code/img/arrowleft.png"></button>
+        <div class="lightbox__container" id="lightbox-container">
+          <img src="https://picsum.photos/900/1800" alt="">
+        </div>
+      </div>
+
 
       <div class="scrollProfile">
         <div>
           <span id="bottom-infos"></span>
           <img src="./img/heart-icon-b&w.png" alt="heart icon" />
         </div>
-        <div id="scrollPrice">test</div>
+        <div id="scrollPrice"></div>
       </div>
+
+      <!-- lightbox -->
 
       <div class="work-display"></div>
     </main>
     <div class="overlay hidden"></div>
+    <script type="module" src="./javascript/objects/lightbox.js"></script>
     <script type="module" src="./javascript/photographer-page.js"></script>
     <script type="module" src="./javascript/objects/photographer.js"></script>
     <script type="module" src="./javascript/objects/image.js"></script>
@@ -181,5 +190,6 @@
     <script type="module" src="./javascript/objects/video.js"></script>
     <script type="module" src="./javascript/modal.js"></script>
     <script type="module" src="./javascript/objects/photographer.js"></script>
+    <script type="module" src="./javascript/dropdown.js"></script>
   </body>
 </html>

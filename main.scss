@@ -203,6 +203,10 @@ main {
   }
 }
 
+button {
+  background-color: $primary-color;
+}
+
 .button {
   position: fixed;
   // bottom: 50px;
@@ -214,17 +218,6 @@ main {
   font-size: 20px;
   border-radius: 5px;
   padding: 10px 10px;
-  border: none;
-  cursor: pointer;
-}
-.button2 {
-  position: relative;
-  transform: scale(0.6);
-  background-color: $primary-color;
-  color: white;
-  font-weight: 600;
-  font-size: 20px;
-  border-radius: 5px;
   border: none;
   cursor: pointer;
 }
@@ -429,92 +422,189 @@ main {
 //   background-color: #db8876;
 //   color: white;
 // }
+
 // test
 
-// TRI
-// .sort {
-//   margin-left: 3.5rem;
-//   font-size: 1.5rem;
-//   font-weight: 700;
-// }
-// #selected-filter {
-//   list-style: none;
-// }
-// #sort-list {
-//   padding: 1rem 0;
-//   text-align: left;
-// }
-// #sort-list li {
-//   margin-left: -2.5rem;
-//   padding: 0.5rem 0;
-// }
-// .popularity-btn {
-//   width: 11rem;
-//   color: white;
-//   left: 12rem;
-//   top: 22.5rem;
-//   padding: 1rem 0 1rem 1rem;
-//   font-weight: 900;
-//   font-size: 1.3rem;
-//   background-color: #901c1c;
-//   border-style: none;
-//   border-radius: 5px;
-//   min-height: 2rem;
-// }
-// .popularity-btn-opened {
-//   z-index: 9;
-//   text-align: left;
-//   display: none;
-// }
-// .popularity-btn-opened ul {
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-// }
-// .sort-by-date,
-// .sort-by-title {
-//   border-top: solid 1px white;
-// }
-// #text-choice {
-//   display: flex;
-//   justify-content: space-between;
-// }
-// #popularity-btn {
-//   display: flex;
-// }
-// .fa-chevron-down {
-//   position: absolute;
-//   top: 1.2rem;
-//   right: 1rem;
-// }
-// .fa-chevron-up {
-//   position: absolute;
-//   right: 1rem;
-//   top: 1.5rem;
-//   color: white;
-// }
-// .sort-list_closed nav {
-//   padding: 0;
-// }
-// .sort-list_closed:hover,
-// .sort-list_closed:focus {
-//   background-color: #db8876;
-//   color: black;
-// }
-// .sort-by button {
-//   background-color: #901c1c;
-//   color: white;
-//   font-size: 1.3rem;
-//   font-weight: 600;
-//   border: none;
-// }
-// .sort-by button:hover,
-// .sort-by button:focus {
-//   background-color: #db8876;
-//   color: black;
-// }
+// Lightbox
 
-//fin tri
+.lightbox {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 10;
+}
+
+.lightbox__next,
+.lightbox__prev {
+  border: none;
+  width: 20px;
+  height: 28px;
+  background-color: white;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 11;
+  opacity: 0.5;
+  cursor: pointer;
+  & :hover {
+    opacity: 1;
+  }
+}
+.lightbox__prev {
+  right: auto;
+  left: 0;
+}
+.lightbox__next img,
+.lightbox__prev img {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+.lightbox__close {
+  background-color: white;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 12;
+}
+
+.lightbox__close img {
+  width: 20px;
+  height: 20px;
+}
+
+.lightbox__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  min-height: 100vh;
+}
+
+.lightbox__container img {
+  max-width: 100%;
+  height: 100%;
+}
+// DROPDOWN MENU
+
+.select__menu {
+  display: flex;
+  margin-left: 5rem;
+  & p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 1rem;
+  }
+  & select {
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    background-color: $primary-color;
+    // margin: 5px;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+  height: 4rem;
+  border: none;
+  background-color: $primary-color;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-left: 5rem;
+}
+#sort-text {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-left: 5rem;
+}
+.popularity-order,
+.date-order,
+.name-order {
+  // position: relative;
+  // transform: scale(0.6);
+  height: 4rem;
+  margin-left: 5rem;
+  background-color: $primary-color;
+  color: white;
+  font-weight: 600;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    background-color: $secondary-color;
+  }
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: $secondary-color;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  float: left;
+  position: absolute;
+  // background-color: #f1f1f1;
+  align-items: right;
+  width: 100%;
+  // box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hearticon:hover {
+  cursor: pointer;
+}
 
 .work-display {
   margin: 20px 20px auto;
@@ -531,6 +621,9 @@ main {
     object-fit: cover;
     object-position: 50% 10%;
     // transform: scale(0.8);
+    &:hover {
+      cursor: pointer;
+    }
   }
   .work-display__card__video {
     border-radius: 5px;
