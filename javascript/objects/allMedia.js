@@ -21,42 +21,68 @@ export class AllMedias {
 
   // DRY
 
-  sortingPopularity() {
-    let popularity = document.getElementById("popularity-order");
-    console.log(popularity);
-    popularity.addEventListener("click", (e) => {
-      console.log("test");
-      this.all = this.all.sort((a, b) => {
-        return b.likes - a.likes;
-      });
-      this.display(this.all);
+  sortingAll() {
+    let sort = document.getElementById("selector");
+    sort.addEventListener("change", (e) => {
+      console.log(sort.value);
+      if (sort.value == "name") {
+        this.all = this.all.sort((a, b) => {
+          return a.title > b.title ? 1 : -1;
+        });
+        this.display(this.all);
+      } else if (sort.value == "popularity") {
+        this.all = this.all.sort((a, b) => {
+          return b.likes - a.likes;
+        });
+        this.display(this.all);
+      } else if (sort.value == "date") {
+        this.all = this.all.sort((a, b) => {
+          let date1 = new Date(a.date);
+          let date2 = new Date(b.date);
+
+          return date2 - date1;
+        });
+        this.display(this.all);
+      }
     });
   }
 
-  sortingDate() {
-    let date = document.getElementById("date-order");
-    date.addEventListener("click", (e) => {
-      this.all = this.all.sort((a, b) => {
-        let date1 = new Date(a.date);
-        let date2 = new Date(b.date);
+  // sortingPopularity() {
+  //   let popularity = document.getElementById("popularity-order");
+  //   console.log(popularity);
+  //   popularity.addEventListener("click", (e) => {
+  //     console.log("test");
+  //     this.all = this.all.sort((a, b) => {
+  //       return b.likes - a.likes;
+  //     });
+  //     this.display(this.all);
+  //   });
+  // }
 
-        return date2 - date1;
-      });
-      this.display(this.all);
-      console.log(this.all);
-    });
-  }
+  // sortingDate() {
+  //   let date = document.getElementById("date-order");
+  //   date.addEventListener("click", (e) => {
+  //     this.all = this.all.sort((a, b) => {
+  //       let date1 = new Date(a.date);
+  //       let date2 = new Date(b.date);
 
-  sortingName() {
-    let name = document.getElementById("name-order");
-    name.addEventListener("click", (e) => {
-      this.all = this.all.sort((a, b) => {
-        return a.title > b.title ? 1 : -1;
-      });
-      this.display(this.all);
-      console.log(this.all);
-    });
-  }
+  //       return date2 - date1;
+  //     });
+  //     this.display(this.all);
+  //     console.log(this.all);
+  //   });
+  // }
+
+  // sortingName() {
+  //   let name = document.getElementById("name-order");
+  //   name.addEventListener("click", (e) => {
+  //     this.all = this.all.sort((a, b) => {
+  //       return a.title > b.title ? 1 : -1;
+  //     });
+  //     this.display(this.all);
+  //     console.log(this.all);
+  //   });
+  // }
 
   addMediaLikes() {
     let hearts = document.getElementsByClassName("hearticon");

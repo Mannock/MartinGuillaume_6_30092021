@@ -46,11 +46,11 @@ fetch("data.json")
     console.log(lightbox.medias);
     console.log(lightbox);
 
-    allMedias.sortingPopularity();
-    allMedias.sortingDate();
-    allMedias.sortingName();
+    // allMedias.sortingPopularity();
+    // allMedias.sortingDate();
+    // allMedias.sortingName();
     allMedias.display(allMedias.all);
-
+    allMedias.sortingAll();
     allMedias.addMediaLikes();
     allMedias.getAllLikes();
     photographer.displayProfile();
@@ -58,12 +58,11 @@ fetch("data.json")
     let x = document.querySelectorAll(".work-display__card__image");
     x.forEach((media, index) => {
       media.addEventListener("click", (e) => {
-        console.log(index);
-        console.log(media);
         lightbox.handleIndex(index);
       });
     });
-
+    lightbox.listenChanges();
+    // lightbox.keyboardClose();
     console.log(x);
     // let lightboxClose = document.getElementById("lightbox__close");
     // lightboxClose.addEventListener("click", (e) => {

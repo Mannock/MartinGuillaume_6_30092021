@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Website for freelance photographers to present their latest projects">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photographer</title>
+    <link rel="shortcut icon" href="./img/shortcut-icon.png" />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
 
@@ -39,7 +41,7 @@
 
       <!-- test -->
       <div class="modal hidden">
-        <button class="close-modal">&times;</button>
+        <button aria-label="Close contact form" class="close-modal">&times;</button>
         <h1>Contactez-moi</h1>
         <h1 id="nameModal"></h1>
         <form action="">
@@ -147,7 +149,7 @@
 
       <div class="select__menu">
         <p>Triez par</p>
-        <select name="" id="selector">
+        <select aria-label="Sort by" name="" id="selector">
           <option value="popularity" id="popularity-order">Popularité</option>
           <option value="date" id="date-order">Date</option>
           <option value="name" id="name-order">Nom</option>
@@ -159,14 +161,63 @@
 
 
       <!-- Lightbox -->
-      <div class="box">
-        <button class="lightbox__close" id="lightbox__close"><img src="/Code/img/cross.png"></button>
-        <button class="lightbox__next"><img src="/Code/img/arrowright.png"></button>
-        <button class="lightbox__prev"><img src="/Code/img/arrowleft.png"></button>
-        <div class="lightbox__container" id="lightbox-container">
-          <img src="https://picsum.photos/900/1800" alt="">
+      <div class="box" id="box">
+        <div class="box-content">
+          <div id="lightbox__previous" class="arrow">
+            <img class="arrow" src="./img/arrowleft.png" alt="Previous image">
+          </div>
+          <div class = "close-slider">
+            <div class="lightbox__container" id="lightbox-container">
+              <img src="https://picsum.photos/900/1800" alt="">
+            </div>
+            <div class ="lightbox__close" id="lightbox__close">
+              <img class="close-box" src="./img/cross.png" alt="Close dialog">
+            </div>
+          </div>
+          <div>
+            <div id="lightbox__next" class="arrow">
+              <img class="arrow" src="./img/arrowright.png" alt="Next image">
+            </div>
+          </div>
+            
+            <!-- <button class="lightbox__close" id="lightbox__close"><img src="/Code/img/cross.png"></button>
+              <button class="lightbox__next" id="lightbox__next"><img src="/Code/img/arrowright.png"></button>
+          <button class="lightbox__prev" id="lightbox__prev"><img src="/Code/img/arrowleft.png"></button> -->
         </div>
       </div>
+<!-- 
+      <div id="slider" class="slider">
+        <div id="slider-all">
+          <div tabindex="5" id="previous" class="arrow">
+            <img
+              class="arrow"
+              src="medias/arrowleft.png"
+              alt="Passer à la diapo précédente"/>
+          </div>
+          <div class="close-slider">
+            <div id="message-nav">
+              <div id="message-nav-txt">
+                Utilisez les flèches "droite" et "gauche" pour naviguer entre
+                les diapos
+              </div>
+              <div class="slider-content"></div>
+            </div>
+            <div id="close-slider" tabindex="6">
+              <img
+                class="cross"
+                src="medias/cross.png"
+                alt="Fermer le diaporama"/>
+            </div>
+          </div>
+          <div>
+            <div id="next" class="arrow" tabindex="5">
+              <img
+                src="medias/arrowright.png"
+                alt="Passer à la diapo suivante"/>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
 
       <div class="scrollProfile">

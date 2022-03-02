@@ -2,7 +2,7 @@ export class Lightbox {
   constructor(allMedias) {
     this.medias = allMedias;
     this.index = 0;
-    console.log(allMedias);
+    // console.log(allMedias);
   }
 
   handleIndex(index) {
@@ -12,9 +12,35 @@ export class Lightbox {
 
   display() {
     const box = document.getElementById("lightbox-container");
+    document.getElementById("box").style.display = "flex";
     const media = this.medias[this.index];
     console.log(media);
-    box.innerHTML = media.render();
+    box.innerHTML = media.renderLightbox();
+    this.close();
+  }
+
+  listenChanges() {
+    let next = document.getElementById("lightbox__next");
+    let previous = document.getElementById("lightbox__previous");
+
+    next.addEventListener("click", (e) => {
+      this.next();
+    });
+    previous.addEventListener("click", (e) => {
+      this.previous();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 39) {
+        this.next();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 37) {
+        this.previous();
+      }
+    });
   }
 
   next() {
@@ -35,9 +61,14 @@ export class Lightbox {
 
   close() {
     let lightboxClose = document.getElementById("lightbox__close");
-    console.log(lightboxClose);
+
     lightboxClose.addEventListener("click", (e) => {
-      document.getElementsByClassName("lightbox")[0].style.display = "none";
+      document.getElementById("box").style.display = "none";
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 27) {
+        document.getElementById("box").style.display = "none";
+      }
     });
   }
 }

@@ -13,26 +13,26 @@ export class Video {
   render = function () {
     return `
     <div class="work-display__card">
-          <video
-            class="work-display__card__image"
-            src="./img/Sample Photos/${this.photographerId}/${this.src}"
-            type ="video/mp4"
-            alt=""
-          /video>
+          <video tabindex="0" class="work-display__card__image">
+          <source src="./img/Sample Photos/${this.photographerId}/${this.src}" type ="video/mp4">
+          </video>
           <div class="infos-card">
-          <h2>${this.title}</h2>
-          <div class="counter">
-          <p class = "medialikes" data-id="${this.id}">${this.likes}</p>
-          <img src="./img/heart-icon.png" class= "hearticon" data-id="${this.id}" alt="heart icon" />
+            <h2>${this.title}</h2>
+            <div class="counter">
+              <p class = "medialikes" data-id="${this.id}">${this.likes}</p>
+              <img src="./img/heart-icon.png" class= "hearticon" data-id="${this.id}" alt="heart icon" />
+            </div>
           </div>
-        </div>
     </div>
 
-`;
+    `;
   };
 
   renderLightbox = function () {
-    return `
+    return `<div class="work-display__card">
+    <video tabindex="0" class="work-display__card__image">
+    <source src="./img/Sample Photos/${this.photographerId}/${this.src}" type ="video/mp4">
+    </video>
     `;
   };
 }

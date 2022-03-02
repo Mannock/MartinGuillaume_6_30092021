@@ -14,6 +14,7 @@ export class Image {
     return `
     <div class="work-display__card">
              <img
+              tabindex="0"
                class="work-display__card__image"
                src="./img/Sample Photos/${this.photographerId}/${this.src}"
                alt=""
@@ -25,13 +26,22 @@ export class Image {
                  <img src="./img/heart-icon.png" class= "hearticon" data-id="${this.id}" alt="heart icon" />
                </div>
              </div>
-             </div>
+    </div>
     
      `;
   };
 
   renderLightbox = function () {
-    return `
+    return `<div class="work-display__card">
+    <img
+      tabindex="0"
+      class="work-display__card__image"
+      src="./img/Sample Photos/${this.photographerId}/${this.src}"
+      alt=""
+    />
+    <div class="infos-card">
+               <h2>${this.title}</h2>
+               </div>
     `;
   };
 

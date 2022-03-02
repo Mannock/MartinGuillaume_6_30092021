@@ -284,7 +284,7 @@ button {
 .scrollProfile {
   display: flex;
   color: black;
-  z-index: 100;
+  z-index: 5;
   width: 20rem;
   font-size: 1.5rem;
   padding: 0.5rem 1.5rem;
@@ -370,6 +370,11 @@ button {
   color: white;
   background-color: #901c1c;
   border-radius: 5px;
+  &:hover {
+    background-color: $secondary-color;
+    color: black;
+    cursor: pointer;
+  }
 }
 .contactButton:hover,
 .contactButton:focus {
@@ -427,54 +432,107 @@ button {
 
 // Lightbox
 
-.lightbox {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+// .lightbox {
+//   display: block;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: white;
+//   z-index: 10;
+// }
+.box {
   background-color: white;
-  z-index: 10;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-.lightbox__next,
-.lightbox__prev {
-  border: none;
-  width: 20px;
-  height: 28px;
-  background-color: white;
-  position: fixed;
-  right: 0;
-  top: 50%;
-  z-index: 11;
-  opacity: 0.5;
-  cursor: pointer;
-  & :hover {
-    opacity: 1;
+.box-content {
+  display: flex;
+  align-items: center;
+  backface-color: #ffffff;
+  max-height: 98%;
+}
+
+#lightbox__previous,
+#lightbox__next {
+  margin-bottom: 4rem;
+  &:hover {
+    cursor: pointer;
   }
 }
-.lightbox__prev {
-  right: auto;
-  left: 0;
-}
-.lightbox__next img,
-.lightbox__prev img {
-  width: 20px;
-  height: 20px;
-  color: white;
-}
-.lightbox__close {
-  background-color: white;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 12;
+
+#lightbox__next {
+  margin-left: -3.5rem;
 }
 
+.lightbox__close {
+  margin-left: -0.5rem;
+  height: 4rem;
+}
+
+#message-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.close-slider {
+  display: flex;
+  flex-direction: row;
+}
+
+.arrow img {
+  width: 4rem;
+}
+
+// .lightbox__next,
+// .lightbox__prev {
+//   border: none;
+//   width: 20px;
+//   height: 28px;
+//   background-color: white;
+//   position: relative;
+//   right: 20;
+//   top: 50%;
+//   z-index: 11;
+//   opacity: 1;
+//   cursor: pointer;
+//   & :hover {
+//     opacity: 1;
+//   }
+// }
+// .lightbox__prev {
+//   right: auto;
+//   left: 0;
+// }
+// .lightbox__next img,
+// .lightbox__prev img {
+//   width: 20px;
+//   height: 20px;
+//   color: white;
+// }
+// .lightbox__close {
+//   background-color: white;
+//   position: absolute;
+//   top: 38px;
+//   right: 14px;
+//   z-index: 12;
+//   border: none;
+// }
+
 .lightbox__close img {
-  width: 20px;
-  height: 20px;
+  width: 4rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .lightbox__container {
@@ -483,12 +541,16 @@ button {
   justify-content: center;
   margin-left: 50px;
   margin-right: 50px;
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 .lightbox__container img {
   max-width: 100%;
-  height: 100%;
+  height: 85vh;
+}
+
+.infos-card h2 {
+  color: $primary-color;
 }
 // DROPDOWN MENU
 
