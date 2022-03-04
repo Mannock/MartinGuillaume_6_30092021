@@ -572,6 +572,7 @@ button {
     // margin: 5px;
     &:hover {
       background-color: $secondary-color;
+      cursor: pointer;
     }
   }
 }
