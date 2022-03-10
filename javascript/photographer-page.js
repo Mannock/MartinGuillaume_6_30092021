@@ -25,7 +25,6 @@ fetch("data.json")
     let medias = json.media.filter(
       (media) => media.photographerId == photographerID
     );
-    console.log(medias);
     let factory = new MediaFactory();
     let allMedias = new AllMedias();
 
@@ -33,11 +32,8 @@ fetch("data.json")
       let media = factory.create(element);
       allMedias.add(media);
     });
-    console.log(allMedias.all);
 
     let lightbox = new Lightbox(allMedias.all);
-    console.log(lightbox.medias);
-    console.log(lightbox);
 
     allMedias.display(allMedias.all);
     allMedias.sortingAll();
@@ -52,5 +48,4 @@ fetch("data.json")
       });
     });
     lightbox.listenChanges();
-    console.log(x);
   });
