@@ -23,7 +23,7 @@ li {
 a {
   text-decoration: none;
   &:visited {
-    color: none;
+    text-decoration: none;
   }
 }
 
@@ -389,7 +389,7 @@ button {
 .box-content {
   display: flex;
   align-items: center;
-  backface-color: #ffffff;
+  background-color: #ffffff;
   max-height: 98%;
 }
 
@@ -528,14 +528,14 @@ button {
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  float: left;
-  position: absolute;
-  align-items: right;
-  width: 100%;
-  z-index: 1;
-}
+// .dropdown-content {
+//   display: none;
+//   float: left;
+//   position: absolute;
+//   align-items: right;
+//   width: 100%;
+//   z-index: 1;
+// }
 
 /* Links inside the dropdown */
 .dropdown-content a {

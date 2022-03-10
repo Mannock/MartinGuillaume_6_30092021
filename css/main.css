@@ -23,7 +23,7 @@ a {
 }
 
 a:visited {
-  color: none;
+  text-decoration: none;
 }
 
 header {
@@ -254,7 +254,6 @@ main .tagProfil li {
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
   }
 }
 
@@ -503,7 +502,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  backface-color: #ffffff;
+  background-color: #ffffff;
   max-height: 98%;
 }
 
@@ -677,17 +676,6 @@ button {
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  float: left;
-  position: absolute;
-  -webkit-box-align: right;
-      -ms-flex-align: right;
-          align-items: right;
-  width: 100%;
-  z-index: 1;
-}
-
 /* Links inside the dropdown */
 .dropdown-content a {
   color: white;
