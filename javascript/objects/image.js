@@ -17,7 +17,7 @@ export class Image {
               tabindex="0"
                class="work-display__card__image"
                src="./img/Sample Photos/${this.photographerId}/${this.src}"
-               alt=""
+               alt="${this.title}"
              />
              <div class="infos-card">
                <h2>${this.title}</h2>

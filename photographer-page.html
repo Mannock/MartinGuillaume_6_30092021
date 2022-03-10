@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Website for freelance photographers to present their latest projects">
+    <meta
+      name="description"
+      content="Website for freelance photographers to present their latest projects"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photographer</title>
     <link rel="shortcut icon" href="./img/shortcut-icon.png" />
@@ -18,8 +21,6 @@
         </a>
       </div>
     </header>
-
-     
 
     <main>
       <div id="mainFiche">
@@ -38,10 +39,12 @@
       </div>
 
       <div class="modal hidden">
-        <button aria-label="Close contact form" class="close-modal">&times;</button>
+        <button aria-label="Close contact form" class="close-modal">
+          &times;
+        </button>
         <h1>Contactez-moi</h1>
         <h1 id="nameModal"></h1>
-        <form action="">
+        <form>
           <div class="firstname-container">
             <label for="firstname">Prénom</label><br />
             <input
@@ -91,16 +94,14 @@
         </form>
       </div>
       <div class="tag" id="tags">
-          <ul></ul>
-        </div>
+        <ul></ul>
       </div>
-
 
       <!-- Select menu -->
 
       <div class="select__menu">
         <p>Triez par</p>
-        <select aria-label="Sort by" name="" id="selector">
+        <select aria-label="Sort by" id="selector">
           <option value="popularity" id="popularity-order">Popularité</option>
           <option value="date" id="date-order">Date</option>
           <option value="name" id="name-order">Nom</option>
@@ -111,19 +112,19 @@
       <div class="box" id="box">
         <div class="box-content">
           <div id="lightbox__previous" class="arrow">
-            <img class="arrow" src="./img/arrowleft.png" alt="Previous image">
+            <img class="arrow" src="./img/arrowleft.png" alt="Previous image" />
           </div>
-          <div class = "close-slider">
+          <div class="close-slider">
             <div class="lightbox__container" id="lightbox-container">
-              <img src="https://picsum.photos/900/1800" alt="">
+              <img src="https://picsum.photos/900/1800" alt="" />
             </div>
-            <div class ="lightbox__close" id="lightbox__close">
-              <img class="close-box" src="./img/cross.png" alt="Close dialog">
+            <div class="lightbox__close" id="lightbox__close">
+              <img class="close-box" src="./img/cross.png" alt="Close dialog" />
             </div>
           </div>
           <div>
             <div id="lightbox__next" class="arrow">
-              <img class="arrow" src="./img/arrowright.png" alt="Next image">
+              <img class="arrow" src="./img/arrowright.png" alt="Next image" />
             </div>
           </div>
         </div>
