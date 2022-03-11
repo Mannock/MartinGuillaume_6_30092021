@@ -17,6 +17,25 @@ export class AllMedias {
       html += media.render();
     });
     document.querySelector(".work-display").innerHTML = html;
+    this.sortingAll();
+    this.addMediaLikes();
+    this.lightboxListener();
+    this.getAllLikes();
+  }
+
+  addLightbox(lightbox) {
+    this.lightbox = lightbox;
+  }
+
+  lightboxListener() {
+    let x = document.querySelectorAll(".work-display__card__image");
+    x.forEach((media, index) => {
+      media.addEventListener("click", (e) => {
+        this.lightbox.handleIndex(index);
+        console.log(this.lightbox.index);
+      });
+    });
+    this.lightbox.listenChanges();
   }
 
   // DRY
@@ -39,10 +58,10 @@ export class AllMedias {
         this.all = this.all.sort((a, b) => {
           let date1 = new Date(a.date);
           let date2 = new Date(b.date);
-
           return date2 - date1;
         });
         this.display(this.all);
+        console.log(this.lightbox.index);
       }
     });
   }

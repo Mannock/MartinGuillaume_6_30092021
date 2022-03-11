@@ -25,27 +25,17 @@ fetch("data.json")
     let medias = json.media.filter(
       (media) => media.photographerId == photographerID
     );
-    let factory = new MediaFactory();
+
     let allMedias = new AllMedias();
+    let lightbox = new Lightbox(allMedias.all);
+    allMedias.addLightbox(lightbox);
+    let factory = new MediaFactory();
 
     medias.forEach((element) => {
       let media = factory.create(element);
       allMedias.add(media);
     });
 
-    let lightbox = new Lightbox(allMedias.all);
-
-    allMedias.display(allMedias.all);
-    allMedias.sortingAll();
-    allMedias.addMediaLikes();
-    allMedias.getAllLikes();
     photographer.displayProfile();
-
-    let x = document.querySelectorAll(".work-display__card__image");
-    x.forEach((media, index) => {
-      media.addEventListener("click", (e) => {
-        lightbox.handleIndex(index);
-      });
-    });
-    lightbox.listenChanges();
+    allMedias.display(allMedias.all);
   });
