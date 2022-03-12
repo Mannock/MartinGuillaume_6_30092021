@@ -38,4 +38,5 @@ fetch("data.json")
 
     photographer.displayProfile();
     allMedias.display(allMedias.all);
+    allMedias.sortingAll();
   });

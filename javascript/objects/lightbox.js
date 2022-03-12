@@ -7,14 +7,15 @@ export class Lightbox {
 
   handleIndex(index) {
     this.index = index;
-    console.log(this.index);
     this.display();
   }
 
   display() {
     const box = document.getElementById("lightbox-container");
     document.getElementById("box").style.display = "flex";
+    console.log(this.index);
     const media = this.medias[this.index];
+    console.log(this.index);
     box.innerHTML = media.renderLightbox();
     this.close();
   }
@@ -63,9 +64,9 @@ export class Lightbox {
     let lightboxClose = document.getElementById("lightbox__close");
 
     lightboxClose.addEventListener("click", (e) => {
+      const box = document.getElementById("lightbox-container");
       document.getElementById("box").style.display = "none";
-      this.index = 0;
-      console.log(this.index);
+      box.innerHTML = "";
     });
     document.addEventListener("keydown", (e) => {
       if (e.keyCode == 27) {

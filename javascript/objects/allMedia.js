@@ -17,9 +17,9 @@ export class AllMedias {
       html += media.render();
     });
     document.querySelector(".work-display").innerHTML = html;
-    this.sortingAll();
-    this.addMediaLikes();
     this.lightboxListener();
+    // this.sortingAll();
+    this.addMediaLikes();
     this.getAllLikes();
   }
 
@@ -33,6 +33,7 @@ export class AllMedias {
       media.addEventListener("click", (e) => {
         this.lightbox.handleIndex(index);
         console.log(this.lightbox.index);
+        console.log(this.all);
       });
     });
     this.lightbox.listenChanges();
@@ -61,7 +62,6 @@ export class AllMedias {
           return date2 - date1;
         });
         this.display(this.all);
-        console.log(this.lightbox.index);
       }
     });
   }
